@@ -76,10 +76,11 @@ function App() {
       ID: sno,
       title: title,
       content: desc,
+	  featured_media: sno,
       status: 'publish'
     };
 
-    axios.post('http://localhost/wordpressrestapi/wp-json/wp/v2/posts', myPosts, {
+    axios.post('http://localhost/wordpressrestapi/wp-json/wp/v2/posts?_embed', myPosts, {
     headers: {
       'Content-Type': 'multipart/form-data',
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -88,12 +89,12 @@ function App() {
     .then((res) => {setPosts([...posts, res.data]); })
     .catch((err) => {console.log(err)});
 
-      var post_id = posts[0].id;
+      var post_id = posts[0].id + 2;
       var form_data = new FormData();
       form_data.append('file', image);
       form_data.append( 'title', image.name );
       form_data.append('post', post_id);
-      // form_data.append('post', post_id);
+      form_data.append('parent', post_id);
       form_data.append('type', 'revision');
       form_data.append('mime_type', 'image/jpeg');
 
