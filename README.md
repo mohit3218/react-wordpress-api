@@ -14,19 +14,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-##Wordpress Setup (wordpressrestapi) Folder
+## `Wordpress Setup (wordpressrestapi) Folder`
 
 Cut the folder wordpressrestapi and paste outside react-wordpress-api folder and then configure
 
-##API URL : http://localhost/wordpressrestapi/ 
+### `API URL : http://localhost/wordpressrestapi/`
 
 If you setup wordpreess folder in wordpressrestapi folder make sure you chage the API url in app.js file and PostSummary.js file 
 
-##wp-config.php 
+### `wp-config.php` 
 
 Change the username , password and database name according to your system.
 
-##Wordpress Backend Login details
+### `Wordpress Backend Login details`
 
 Username: admin@admin.com
 Password: mohit*789
