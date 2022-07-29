@@ -76,7 +76,6 @@ function App() {
       ID: sno,
       title: title,
       content: desc,
-	  featured_media: sno,
       status: 'publish'
     };
 
