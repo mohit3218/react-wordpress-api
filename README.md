@@ -20,7 +20,7 @@ Cut the folder wordpressrestapi and paste outside react-wordpress-api folder and
 
 ### `API URL : http://localhost/wordpressrestapi/`
 
-If you setup wordpreess folder in wordpressrestapi folder make sure you chage the API url in app.js file and PostSummary.js file 
+If you setup wordpreess folder in react-wordpress-api folder make sure you chage the API url in app.js file and PostSummary.js file 
 
 ### `wp-config.php` 
 
