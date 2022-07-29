@@ -31,5 +31,8 @@ Change the username , password and database name according to your system.
 Username: admin@admin.com
 Password: mohit*789
 
+### `Database`
+
+database sql file added in wordpressrestapi folder with the name wp_rest_api.sql
 
 
