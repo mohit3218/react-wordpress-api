@@ -85,20 +85,27 @@ function App() {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
     })
-    .then((res) => {setPosts([...posts, res.data]); })
+    .then((res) => {
+      uploadMedia(res.data, image);
+      setPosts([...posts, res.data]); 
+    })
     .catch((err) => {console.log(err)});
+  };
 
-      var post_id = posts[0].id + 2;
+  function uploadMedia(data , image){
+    console.log(data);
+      // var post_id = data.id ;
       var form_data = new FormData();
       form_data.append('file', image);
-      form_data.append( 'title', image.name );
-      form_data.append('post', post_id);
-      form_data.append('parent', post_id);
-      form_data.append('type', 'revision');
-      form_data.append('mime_type', 'image/jpeg');
+      form_data.append('title', image.name );
+      form_data.append('post', data.id);
+      // form_data.append('parent', data.id);
+      // form_data.append('status', 'publish');
+      // form_data.append('type', 'revision');
+      // form_data.append('mime_type', 'image/jpeg');
 
       console.log(form_data);
-      var uploadedMedia = axios.post("http://localhost/wordpressrestapi/wp-json/wp/v2/media/?featured=" + post_id,
+      var uploadedMedia = axios.post("http://localhost/wordpressrestapi/wp-json/wp/v2/media/?featured=" + data.id,
       form_data, {
           headers: {
             "Content-Disposition": `form-data; filename=" ${image.name}"`,
@@ -108,7 +115,7 @@ function App() {
       });
       
       console.log(uploadedMedia);
-  };
+  }
 
   
   //Get Post
